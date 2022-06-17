@@ -9,7 +9,10 @@
 
 FILENAME="$1"
 case "$FILENAME" in
-  *mkv | *mp4 | *ts | *mp3 | *flac | *wav)
+  *mp3 | *flac | *wav)
+    mpv "$FILENAME"
+    ;;
+  *mkv | *mp4 | *ts)
     mpv "$FILENAME" &
     ;;
   *png | *jpg | *jpeg | *pnm)
