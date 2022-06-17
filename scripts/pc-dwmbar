@@ -2,6 +2,8 @@
 
 while :
 do
-	xsetroot -name " $(date +"%d %b %Y") - $(date +%R)"
-	sleep 1m	# update time every minute
+	date="日: $(date +"%d %b %Y")"
+  time="時: $(date +%R)"
+	xsetroot -name "$date | $time"
+	sleep 1m # update time every minute
 done
