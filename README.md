@@ -12,11 +12,25 @@ Base changes
 ------------
 Patches are located in the *patches* directory. Other than that, I haven't
 touched config files any deeper than setting up base values. 
-This dwm build also has script functionality. If you want to enable it:
+This dwm build also has script functionality.
+
+Scripts
+-------
+If you want to know how to use them just read their respective source code.
+All of them are carefully documented. The scripts are added to $PATH, so you
+can run them from anywhere you want.
+
+Configuration
+-------------
+First install st and dmenu from the suckless website. Set your desired font
+for st. (mine is *iosevka-term.ttc:style=Extended:size=15*)
+Once your done clone the repo and compile it the same way you would compile
+st and dmenu. To enable scripts:
 ```bash
 ln -s {repo path here}/scripts/bashrc ~/.bashrc
 ```
 Just remember to back up and remove your own .bashrc.
+
 
 Beatrice's Theme
 ----------------
