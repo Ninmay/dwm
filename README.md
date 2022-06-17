@@ -58,8 +58,8 @@ To enable scripts:
 ```bash
 ln -s {repo path here}/scripts/bashrc ~/.bashrc
 ```
-Just remember to back up and remove your own .bashrc.
-
+Just remember to back up and remove your own .bashrc. If there are any programs
+bash couldn't found, that means you haven't installed them yet. If so, install them.
 
 Beatrice's Theme
 ----------------
