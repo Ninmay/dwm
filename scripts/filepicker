@@ -1,0 +1,24 @@
+#!/bin/bash
+
+## @file
+# Works kind of like rifle.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+#
+
+FILENAME="$1"
+case "$FILENAME" in
+  *mkv | *mp4 | *mp3 | *ts)
+    mpv "$FILENAME"
+    ;;
+  *png | *jpg | *jpeg | *pnm)
+    sxiv "$FILENAME"
+    ;;
+  *tex | *c | *h | *java)
+    vim "$FILENAME"
+    ;;
+  *pdf)
+    zathura --fork "$FILENAME"
+    ;; # Feel free to add your functionality.
+esac

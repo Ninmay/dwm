@@ -2,7 +2,11 @@
 
 ## @file
 # Runs the file selected with fzf. The file is ran by an app chosen
-# based on the file extension.
+# based on the file extension. It's different than frun, because it
+# starts the search from the working directory.
+#
+# If there's a program you would explicitly like to use, pass it
+# as argument. For example: fr vim.
 #
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
@@ -10,15 +14,8 @@
 
 FILENAME="$(fzf)"
 
-case "$FILENAME" in
-  *mkv | *mp4 | *mp3 | *ts)
-    mpv "$FILENAME"
-    ;;
-  *tex | *c | *h | *java)
-    vim "$FILENAME"
-    ;;
-  *pdf)
-    zathura --fork "$FILENAME"
-    ;; # Feel free to add your functionality.
-esac
-
+if [[ -z $1 ]]; then
+  filepicker "$FILENAME"
+else
+  $1 "$FILENAME"
+fi
