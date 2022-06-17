@@ -10,7 +10,7 @@ Iosevka fonts will come in handy. Otherwise change it to your own taste.
 
 Base changes
 ------------
-Patches are located in the *preview* directory. Other than that, I haven't touched
+Patches are located in the *patches* directory. Other than that, I haven't touched
 config files any deeper than setting up base values.
 
 Beatrice's Theme
