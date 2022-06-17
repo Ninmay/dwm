@@ -24,8 +24,8 @@ Configuration
 -------------
 First install st and dmenu from the suckless website. Set your desired font
 for st. (mine is *iosevka-term.ttc:style=Extended:size=15*)
-Once your done clone the repo and compile it the same way you would compile
-st and dmenu. To enable scripts:
+Once your done, clone this repository and compile it the same way you would
+compile st and dmenu. To enable scripts:
 ```bash
 ln -s {repo path here}/scripts/bashrc ~/.bashrc
 ```
