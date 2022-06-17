@@ -10,8 +10,12 @@ Iosevka fonts will come in handy. Otherwise change it to your own taste.
 
 Base changes
 ------------
-Patches are located in the *patches* directory. Other than that, I haven't touched
-config files any deeper than setting up base values.
+Patches are located in the *patches* directory. Other than that, I haven't
+touched config files any deeper than setting up base values. 
+This dwm build also has script functionality. If you want to enable it:
+```sh
+ln -s {repo path here}/scripts/bashrc .bashrc
+```
 
 Beatrice's Theme
 ----------------
