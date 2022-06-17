@@ -24,7 +24,7 @@ Configuration
 -------------
 First install st and dmenu from the suckless website. Set your desired font
 for st. (mine is *iosevka-term.ttc:style=Extended:size=15*)
-Once your done, clone this repository and compile it the same way you would
+Once you're done, clone this repository and compile it the same way you would
 compile st and dmenu.  
 Copy the default xinitrc to your home directory as .xinitrc. It *should*
 be in the /etc/X11/xinit/xinitrc. Remove the lines with xterm, xclock and
