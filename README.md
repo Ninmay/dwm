@@ -44,8 +44,8 @@ killall pavucontrol
 # chinese cartoons
 fcitx &
 ```  
-It's also best to set via visudo programs you would like to run without sudo
-for example sleep, shutdown, xbacklight (for changing brightness).
+It's also best to set via visudo programs you would like to run without sudo.
+For example sleep, shutdown, xbacklight (for changing brightness).
 ```bash
 ## Uncomment to allow members of group wheel to execute any command
 # %wheel ALL=(ALL) ALL
