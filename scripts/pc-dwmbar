@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while :
+do
+	xsetroot -name " $(date +"%d %b %Y") - $(date +%R)"
+	sleep 1m	# update time every minute
+done

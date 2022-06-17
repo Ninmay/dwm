@@ -7,7 +7,7 @@
 
 PS1='\[\033[1;31m\][\u@\h \[\033[1;37m\]\W\[\033[1;31m\]]\$ \[\033[0;37m\]'
 # Add to path
-export PATH=/home/nintendo/.local/bin:$PATH
+export PATH=~/Build/dwm/scripts:$PATH
 
 # modes
 alias music='mpv ~/Music/* --shuffle'

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# A script that sets up your status. It's set up to display date, time and battery. 
+# To add more, insert your patch between >.
+
+while :
+do
+	# Displays battery. There is also a script that will turn off your device in 30 seconds,
+	# unless its battery is above 10% or is charging.
+
+	for x in "$(cat /sys/class/power_supply/BAT0/status)";	# is it charging or not
+	do
+		case $x in
+			Charging)	battery_status="(充電)"	;;
+			*)		battery_status=""	;;
+		esac
+	done
+
+	capacity=$(cat /sys/class/power_supply/BAT0/capacity)	# battery percentage
+	battery_capacity="$capacity%"
+
+	[ -z $battery_status ] &&	# poweroff script
+	[ $capacity -lt 15 ] &&
+	for x in {30..1}
+	do
+		xsetroot -name "Laptop will turn off in $x seconds."
+		sleep 1s
+	done && 
+	flag=$(cat /sys/class/power_supply/BAT0/status) &&
+	! [ "$flag" = "Charging" ] &&
+	sudo zzz	
+	
+	#>
+	#>
+
+	# For different format, change the parameters.
+
+	date="日: $(date +"%d %b %Y")"
+  time="時: $(date +%R)"
+  battery="電: $battery_capacity$battery_status"
+
+
+	# Using xsetroot, we list following values.
+
+	xsetroot -name "$date | $time | $battery"
+	sleep 1m # update time every minute
+done

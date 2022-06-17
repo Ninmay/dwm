@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Create two sinks
+#The first sink (RECORDING_SINK) captures application audio which is routed to headphones and to the second sink
+#The second sink (COMBINED_SINK) receives both microphone audio and audio from the first sink and functions as a mixer to deliver the audio to discord
+RECORDING_SINK=$(pactl load-module module-null-sink sink_name=Recording_Sink sink_properties=device.description="Recording_Sink")
+COMBINED_SINK=$(pactl load-module module-null-sink sink_name=Combined_Sink sink_properties=device.description="Combined_Sink")
+
+#A virtual mic is created from the Combined sink monitor to expose it to discord
+VIRTUAL_MIC=$(pactl load-module module-remap-source master=Combined_Sink.monitor source_name=VirtualMic source_properties=device.description="VirtualMic")
+
+#Audio Routing
+#Route mic input to Combined_Sink
+#Route Recording_Sink monitor to Combined_Sink
+#Route Recording_Sink monitor to headphones
+pacmd load-module module-loopback source=alsa_input.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-mono sink=Combined_Sink latency_msec=1 >> /dev/null
+pacmd load-module module-loopback rate=44000 adjust_time=0 source=Recording_Sink.monitor sink=Combined_Sink latency_msec=1 >> /dev/null
+pacmd load-module module-loopback rate=44000 adjust_time=0 source=Recording_Sink.monitor sink=alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output latency_msec=1 >> /dev/null
+
+read -p "Loaded! Press enter to unload!"
+
+pacmd unload-module $VIRTUAL_MIC
+pacmd unload-module $RECORDING_SINK
+pacmd unload-module $COMBINED_SINK
+pacmd unload-module module-loopback
