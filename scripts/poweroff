@@ -1,3 +1,13 @@
 #!/bin/bash
 
-sudo runit-init 0
+## @file
+# A convenient "alias" for powering off your device. 
+# It's written as a script instead of alias, so that it's possible to
+# call it from dmenu conveniently.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+#
+
+# This is how you poweroff in Artix Linux.
+sudo runit-init 0 # Change it accordingly to your distribution.

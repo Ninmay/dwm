@@ -17,15 +17,44 @@ This dwm build also has script functionality.
 Scripts
 -------
 If you want to know how to use them just read their respective source code.
-All of them are carefully documented. The scripts are added to $PATH, so you
-can run them from anywhere you want.
+All of them are carefully documented in *respective scripts* and *bashrc*.
+The scripts are added to $PATH, so you can run them from anywhere you want.
 
 Configuration
 -------------
 First install st and dmenu from the suckless website. Set your desired font
 for st. (mine is *iosevka-term.ttc:style=Extended:size=15*)
 Once your done, clone this repository and compile it the same way you would
-compile st and dmenu. To enable scripts:
+compile st and dmenu.  
+Copy the default xinitrc to your home directory as .xinitrc. It *should*
+be in the /etc/X11/xinit/xinitrc. Remove the lines with xterm, xclock and
+twm. Then add programs at the end that you would like to run on start up.
+My example:
+```bash
+# wallpaper
+~/.fehbg
+
+# dwm
+~/Build/dwm/scripts/laptop-dwmbar &
+sxhkd &
+pavucontrol & # My laptop won't play sound without this.
+sleep 0.2
+killall pavucontrol
+
+# chinese cartoons
+fcitx &
+```  
+It's also best via visudo programs you would like to run without sudo
+for example sleep, shutdown, xbacklight (for changing brightness).
+```bash
+## Uncomment to allow members of group wheel to execute any command
+# %wheel ALL=(ALL) ALL
+
+## Same thing without a password
+# %wheel ALL=(ALL) NOPASSWD: ALL
+nintendo ALL=(ALL) NOPASSWD: /bin/runit-init, /usr/bin/xbacklight, /usr/bin/zzz
+```  
+To enable scripts:
 ```bash
 ln -s {repo path here}/scripts/bashrc ~/.bashrc
 ```

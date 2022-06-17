@@ -2,35 +2,43 @@
 # ~/.bashrc
 #
 
+## @file
+# Main rc file. This bashrc is also responsible for autostarting dwm
+# from the first terminal. If you want to use the console switch to tty2.
+# In case you don't need this functionality just comment out the code.
+#
+# @author Anh Dinh Trong <ad438410@students.mimuw.edu.pl>
+# @date 2021
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 PS1='\[\033[1;31m\][\u@\h \[\033[1;37m\]\W\[\033[1;31m\]]\$ \[\033[0;37m\]'
-# Add to path
-export PATH=~/Build/dwm/scripts:$PATH
+export PATH=~/Build/dwm/scripts:$PATH # Add scripts to path.
 
-# modes
+# Modes. Planning to add stuff like: reading, watching. 
 alias music='mpv ~/Music/* --shuffle'
 
-# applications
-alias ls='ls --color=auto --group-directories-first'
-alias fcd='cd $(find ~ -not -path "*/.*" -type d -print | fzf)'
-alias fhcd='cd $(find ~ -type d -print | fzf)'
-alias frun='source frun'
-alias fr='source fr'
+# Fuzzy.
+alias fcd='cd $(find ~ -not -path "*/.*" -type d -print | fzf)' # Fuzzy cd.
+alias fhcd='cd $(find ~ -type d -print | fzf)' # Fuzzy cd over hidden files.
+alias frun='source frun' # source, because we want cd to be pernament.
 
+# Special parameters for applications.
+alias ls='ls --color=auto --group-directories-first'
 alias tree='watch -n 5 tree . -L 1'
 alias ranger='. ranger'
 alias youtube-dl='youtube-dl --no-playlist --audio-format mp3 --audio-quality 320K'
 
-# short
+# shortcuts
 alias m='udisksctl mount -b'
 alias um='udisksctl unmount -b'
 
-# coding
+# vim 
 alias mkjmain='cp ~/.vim/completion/Main.java .'
 alias cleantags='rm tags *.taghl'
 
+# Autorun startx from the first terminal.
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
   exec startx
 fi

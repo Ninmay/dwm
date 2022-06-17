@@ -1,6 +1,14 @@
 #!/bin/bash
 
-FILENAME="$(find ~ -not -path "*/.*" | fzf)"
+## @file
+# Changes the directory and runs the file selected with fzf. The file
+# is ran by an app chosen based on the file extension.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+#
+
+FILENAME="$(find ~ -not -path "*/.*" | fzf)" # omit hidden directories
 cd "$(dirname "$FILENAME")"
 
 case "$FILENAME" in
@@ -12,5 +20,5 @@ case "$FILENAME" in
     ;;
   *pdf)
     zathura --fork "$FILENAME"
-    ;;
+    ;; # Feel free to add your functionality.
 esac

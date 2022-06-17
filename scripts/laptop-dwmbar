@@ -1,13 +1,17 @@
 #!/bin/bash
 
-# A script that sets up your status. It's set up to display date, time and battery. 
-# To add more, insert your patch between >.
+## @file
+# Sets up your status. It's set up to display date, time and battery. 
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+#
 
 while :
 do
-	# Displays battery. There is also a script that will turn off your device in 30 seconds,
-	# unless its battery is above 10% or is charging.
 
+	# Displays battery. Script will put your device to sleep in 30 seconds,
+	# unless its battery is above 10% or is charging.
 	for x in "$(cat /sys/class/power_supply/BAT0/status)";	# is it charging or not
 	do
 		case $x in
@@ -30,18 +34,13 @@ do
 	! [ "$flag" = "Charging" ] &&
 	sudo zzz	
 	
-	#>
-	#>
-
 	# For different format, change the parameters.
-
 	date="日: $(date +"%d %b %Y")"
   time="時: $(date +%R)"
   battery="電: $battery_capacity$battery_status"
 
 
 	# Using xsetroot, we list following values.
-
 	xsetroot -name "$date | $time | $battery"
 	sleep 1m # update time every minute
 done
