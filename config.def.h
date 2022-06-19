@@ -20,13 +20,11 @@ static const char col_cyan[]        = "#005577";
 static const char col_black[]       = "#000000";
 static const char col_background[]  = "#1b1a15";
 static const char col_doll_eyes[]   = "#4a543c";
-// static const char col_trice_dress[] = "#400c19"; // It matches Doll's hat as well.
-// static const char col_trice_dress[] = "#49474a"; // It matches Doll's hat as well.
-static const char col_trice_dress[] = "#312d2e"; // It matches Doll's hat as well.
+static const char col_maria_hat[]   = "#312d2e";
 static const char *colors[][3]      = {
 	/*               fg         bg               border          */
 	[SchemeNorm] = { col_gray3, col_background,  col_black        },
-	[SchemeSel]  = { col_gray4, col_trice_dress, col_doll_eyes    },
+	[SchemeSel]  = { col_gray4, col_maria_hat,   col_doll_eyes    },
 };
 
 /* tagging */
