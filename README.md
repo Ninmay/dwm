@@ -67,9 +67,9 @@ PS The wallpaper is in the *preview* folder. (I set it with feh.)
 
 Beatrice's Theme
 ----------------
-![clean](./preview/clean.png)
-![general](./preview/general.png)
-![write](./preview/write.png)
-![compile](./preview/compile.png)
-![browse](./preview/browse.png)
-![fun](./preview/fun.png)
+![clean](./preview/clean.jpg)
+![general](./preview/general.jpg)
+![write](./preview/write.jpg)
+![compile](./preview/compile.jpg)
+![browse](./preview/browse.jpg)
+![fun](./preview/fun.jpg)
