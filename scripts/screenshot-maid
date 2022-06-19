@@ -5,7 +5,7 @@
 #
 # It is assumed that there's no such image named '*'. Otherwise this
 # script will throw "empty directory" error. It is also assumed that
-# the last image is lexicographically first. Please make sure the 
+# the earliest image is lexicographically first. Please make sure the 
 # directories exist beforehand. Please also remember to set the parameter
 # $1 without trailing /.
 #
