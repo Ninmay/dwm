@@ -6,6 +6,7 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
+Packages: *xorg-server*, *xorg-xinit*.
 Iosevka fonts will come in handy. Otherwise change it to your own taste.
 
 Base changes
@@ -18,12 +19,14 @@ Scripts
 -------
 If you want to know how to use them just read their respective source code.
 All of them are carefully documented in *respective scripts* and *bashrc*.
-The scripts are added to $PATH, so you can run them from anywhere you want.
+(and other configs you can find in *scripts* folder) The scripts are added
+to $PATH, so you can run them from anywhere you want.
+
 
 Configuration
 -------------
 First install st and dmenu from the suckless website. Set your desired font
-for st. (mine is *iosevka-term.ttc:style=Extended:size=15*)
+for st. My config: *iosevka-term.ttc:style=Extended:size=15*, *borderpx = 25*.
 Once you're done, clone this repository and compile it the same way you would
 compile st and dmenu.  
 Copy the default xinitrc to your home directory as .xinitrc. It *should*
@@ -38,7 +41,7 @@ My example:
 ~/Build/dwm/scripts/laptop-dwmbar &
 sxhkd &
 pavucontrol & # My laptop won't play sound without this.
-sleep 0.2
+sleep 0.5
 killall pavucontrol
 
 # chinese cartoons
@@ -54,7 +57,7 @@ For example sleep, shutdown, xbacklight (for changing brightness).
 # %wheel ALL=(ALL) NOPASSWD: ALL
 nintendo ALL=(ALL) NOPASSWD: /bin/runit-init, /usr/bin/xbacklight, /usr/bin/zzz
 ```  
-To enable scripts:
+To enable scripts (or include any other config):
 ```bash
 ln -s {repo path here}/scripts/bashrc ~/.bashrc
 ```

@@ -4,7 +4,7 @@
 # Sets up your status. It's set up to display date, time and battery. 
 #
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
-# @date 2022
+# @date 2020
 #
 
 while :
@@ -23,16 +23,16 @@ do
 	capacity=$(cat /sys/class/power_supply/BAT0/capacity)	# battery percentage
 	battery_capacity="$capacity%"
 
-	[ -z $battery_status ] &&	# poweroff script
-	[ $capacity -lt 15 ] &&
-	for x in {30..1}
-	do
-		xsetroot -name "Laptop will turn off in $x seconds."
-		sleep 1s
-	done && 
-	flag=$(cat /sys/class/power_supply/BAT0/status) &&
-	! [ "$flag" = "Charging" ] &&
-	sudo zzz	
+  # Sleep script.
+  if [[ -z $battery_status && $capacity -lt 10 ]]; then
+    for x in {30..1}; do
+      xsetroot -name "Laptop will turn off in $x seconds."
+      sleep 1s
+    done && 
+    flag=$(cat /sys/class/power_supply/BAT0/status) &&
+    ! [ "$flag" = "Charging" ] &&
+    sudo zzz	
+  fi
 	
 	# For different format, change the parameters.
 	date="日: $(date +"%d %b %Y")"

@@ -1,0 +1,40 @@
+#!/bin/bash
+
+## @file
+# Moves the oldest screenshot to a designated folder.
+#
+# It is assumed that there's no such image named '*'. Otherwise this
+# script will throw "empty directory" error. It is also assumed that
+# the last image is lexicographically first. Please make sure the 
+# directories exist beforehand. Please also remember to set the parameter
+# $1 without trailing /.
+#
+# $1 - path to directory where screenshots are sent.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+#
+
+# Pictures path should be dependent on the directory your screenshot
+# app sends the screenshots to, which is why it's not set as macro.
+PICTURES="$1" # Path to directory with screenshots.
+# Path to directory to where screenshots are moved.
+SCREENSHOTS="$PICTURES/.screenshots" # Remove the dot if needed.
+FORMAT="png" # Image format of screenshots.
+
+file=("$PICTURES/"*.$FORMAT) # Note that $file is equivalent to ${file[0]}
+
+# To prevent from random directories piling up, it is required that
+# the user handles directory creation.
+if ! [[ -d $PICTURES && -d $SCREENSHOTS ]]; then
+  echo "Screenshot directories weren't loaded properly."
+  exit 1
+fi
+
+if [[ $file = "$PICTURES/*.$FORMAT" ]]; then # Wildcard didn't expand.
+  echo "There are no screenshots left. "`
+       `"(Or possibly there is a file named '.$FORMAT'.)" 
+  exit 1
+fi
+
+mv "$file" "$SCREENSHOTS"

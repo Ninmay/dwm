@@ -1,0 +1,29 @@
+#
+# st app launch 
+#
+
+# ranger
+shift + alt + f
+  st -e ranger
+
+#
+# screenshotting
+#
+
+# selection screenshot
+shift + Print
+	maim -s -u ~/Pictures/"$(date '+%Y %m %d %T')".png && \
+  screenshot-maid ~/Pictures
+
+# whole-screen screenshot
+Print 
+	maim -u ~/Pictures/"$(date '+%Y %m %d %T')".png && \
+  screenshot-maid ~/Pictures
+
+#
+# recording
+#
+
+# camera
+super + q
+	mpv /dev/video0 --profile=low-latency --untimed
