@@ -25,12 +25,8 @@ if [[ $(pwd) != $REPO ]]; then
   echo "Please move to the repository directory."
 fi
 
-echo "Pushing master..."
-git push
-echo "Done!"; sleep 1
-
 for tm in ${THEMES[@]}; do
-  echo "Pushing $tm..."
+  echo "Updating $tm..."
   git checkout $tm
   git cherry-pick master
   git push
