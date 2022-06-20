@@ -17,6 +17,6 @@ fi
 for tm in ${THEMES[@]}; do
   echo "Pulling $tm..."
   git checkout $tm
-  git git pull 
+  git pull 
   echo "Done!"; sleep 1
 done
