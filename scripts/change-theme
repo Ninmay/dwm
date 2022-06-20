@@ -9,7 +9,7 @@
 # @date 2022
 #
 THEMES=(alicia beatrice maria)
-REPO=~/Build/dwm
+REPO="$HOME/Build/dwm"
 
 theme=$1
 if [[ -z $theme || ! ${THEMES[@]} =~ $theme ]]; then

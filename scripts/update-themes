@@ -1,0 +1,23 @@
+#!/bin/bash
+
+## @file
+# Commits and pushes a pushed master to the all themes.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+#
+
+THEMES=(alice beatrice maria)
+REPO="$HOME/Build/dwm"
+
+if [[ $(pwd) != $REPO ]]; then
+  echo "Please move to the repository directory."
+fi
+
+for tm in ${THEMES[@]}; do
+  echo "Updating $tm..."
+  git checkout $tm
+  git cherry-pick master
+  git push
+  echo "Done!"; sleep 1
+done
