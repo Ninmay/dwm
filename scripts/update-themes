@@ -21,3 +21,5 @@ for tm in ${THEMES[@]}; do
   git push
   echo "Done!"; sleep 1
 done
+
+git checkout master
