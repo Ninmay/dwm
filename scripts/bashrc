@@ -13,7 +13,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\[\033[1;31m\][\u@\h \[\033[1;37m\]\W\[\033[1;31m\]]\$ \[\033[0;37m\]'
+PS1='\[\033[1;36m\][\u@\h \[\033[1;37m\]\W\[\033[1;36m\]]\$ \[\033[0;37m\]'
 export PATH=~/Build/dwm/scripts:$PATH # Add scripts to path.
 
 # Modes. Planning to add stuff like: reading, watching. 
