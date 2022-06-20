@@ -1,0 +1,35 @@
+#!/bin/bash
+
+## @file
+# Changes the dwm theme.
+#
+# $1 - name of the theme.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+#
+THEMES=(alice beatrice maria)
+REPO=~/Build/dwm
+
+theme=$1
+if [[ -z $theme || ! ${THEMES[@]} =~ $theme ]]; then
+  echo "There's no such theme."
+  exit 1
+fi
+
+echo 'Checking out the theme...'
+cd "$REPO"
+current=$(git branch --show-current)
+if [[ $current = $theme ]]; then
+  echo "You already have this theme!"
+  exit 1
+fi
+git checkout $theme
+echo 'Done!'; sleep 1
+
+echo 'Setting wallpaper...'
+sed -i "s/$current/$theme/" ~/.fehbg
+echo 'Done!'; sleep 1
+
+echo 'After compilation is finished please restart the session.'
+sudo make clean install
