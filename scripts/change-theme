@@ -20,6 +20,10 @@ fi
 echo 'Checking out the theme...'
 cd "$REPO"
 current=$(git branch --show-current)
+if [[ $current = master ]]; then
+  echo "Please checkout from master first."
+  exit 1
+fi
 if [[ $current = $theme ]]; then
   echo "You already have this theme!"
   exit 1
