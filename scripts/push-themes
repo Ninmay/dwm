@@ -20,17 +20,20 @@ if [[ ! $current =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
   echo "There's no such theme."
   exit 1
 fi
-
 if [[ $(pwd) != $REPO ]]; then
   echo "Please move to the repository directory."
 fi
 
+echo "Pushing master..."
+git push
+echo "Done!"; sleep 1
+
 for tm in ${THEMES[@]}; do
-  echo "Updating $tm..."
+  echo "Pushing $tm..."
   git checkout $tm
   git cherry-pick master
   git push
   echo "Done!"; sleep 1
 done
 
-git checkout current
+git checkout "$current"
