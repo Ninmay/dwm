@@ -3,12 +3,23 @@
 ## @file
 # Commits and pushes a pushed master to the all themes.
 #
+# $1 - current theme.
+#
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
 #
 
 THEMES=(alicia beatrice maria)
 REPO="$HOME/Build/dwm"
+
+current="$1"
+
+reg1="^[[:alnum:]]+$"
+reg2="\b$theme\b"
+if [[ ! $theme =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
+  echo "There's no such theme."
+  exit 1
+fi
 
 if [[ $(pwd) != $REPO ]]; then
   echo "Please move to the repository directory."
@@ -26,4 +37,4 @@ for tm in ${THEMES[@]}; do
   echo "Done!"; sleep 1
 done
 
-git checkout master
+git checkout current

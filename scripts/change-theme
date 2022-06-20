@@ -12,8 +12,9 @@ THEMES=(alicia beatrice maria)
 REPO="$HOME/Build/dwm"
 
 theme="$1"
-reg="\b$theme\b"
-if [[ -z $theme || ! ${THEMES[@]} =~ $reg ]]; then
+reg1="^[[:alnum:]]+$"
+reg2="\b$theme\b"
+if [[ ! $theme =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
   echo "There's no such theme."
   exit 1
 fi
