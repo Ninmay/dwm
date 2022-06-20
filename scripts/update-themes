@@ -7,7 +7,7 @@
 # @date 2022
 #
 
-THEMES=(alice beatrice maria)
+THEMES=(alicia beatrice maria)
 REPO="$HOME/Build/dwm"
 
 if [[ $(pwd) != $REPO ]]; then
