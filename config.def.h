@@ -18,13 +18,13 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char col_black[]       = "#000000";
-static const char col_background[]  = "#1b1a15";
-static const char col_doll_eyes[]   = "#4a543c";
-static const char col_maria_hat[]   = "#312d2e";
+static const char col_background[]  = "#362221";
+static const char col_trice_hair[]  = "#4f200e";
+static const char col_trice_dress[] = "#400c19";
 static const char *colors[][3]      = {
 	/*               fg         bg               border          */
 	[SchemeNorm] = { col_gray3, col_background,  col_black        },
-	[SchemeSel]  = { col_gray4, col_maria_hat,   col_doll_eyes    },
+	[SchemeSel]  = { col_gray4, col_trice_dress, col_trice_hair   },
 };
 
 /* tagging */
@@ -66,7 +66,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_background, "-nf", col_gray3, "-sb", col_maria_hat, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_background, "-nf", col_gray3, "-sb", col_trice_dress, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /* sound and brightness */
