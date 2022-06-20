@@ -64,9 +64,9 @@ ln -s {repo path here}/scripts/bashrc ~/.bashrc
 Just remember to back up and remove your own .bashrc. If there are any programs
 bash couldn't found, that means you haven't installed them yet. If so, install them.
 PS The wallpaper is in the *preview* folder. (I set it with feh.)
-Makefile deletes *config.h*, so changes shall go to *config.def.h*.
+Makefile deletes *config.h*, so changes shall go to *_config.def.h*.
 
-Beatrice's Theme
+Maria's Theme
 ----------------
 ![clean](./preview/clean.jpg)
 ![general](./preview/general.jpg)
