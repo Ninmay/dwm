@@ -66,8 +66,8 @@ bash couldn't found, that means you haven't installed them yet. If so, install t
 PS The wallpaper is in the *preview* folder. (I set it with feh.)
 Makefile deletes *config.h*, so changes shall go to *config.def.h*.
 
-Maria's Theme
-----------------
+Theme
+-----
 ![clean](./preview/clean.jpg)
 ![general](./preview/general.jpg)
 ![write](./preview/write.jpg)
