@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## @file
+# frun-comp means frun, but compact.
 # Runs the file selected with fzf. The file is ran by an app chosen
 # based on the file extension. It's different than frun, because it
 # starts the search from the working directory.
