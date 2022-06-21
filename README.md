@@ -15,14 +15,6 @@ Patches are located in the *patches* directory. Other than that, I haven't
 touched config files any deeper than setting up base values. 
 This dwm build also has script functionality.
 
-Scripts
--------
-If you want to know how to use them just read their respective source code.
-All of them are carefully documented in *respective scripts* and *bashrc*.
-(and other configs you can find in *bin* folder) The scripts are added to
-$PATH, so you can run them from anywhere you want.
-
-
 Configuration
 -------------
 First install st and dmenu from the suckless website. Set your desired font

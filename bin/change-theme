@@ -8,34 +8,48 @@
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
 #
-THEMES=(alicia beatrice maria)
+
 REPO="$HOME/Build/dwm"
+BASHRC="$REPO/bin/bashrc"
+FEHBG="$REPO/bin/fehbg"
+INCLUDE="2"
+PATCHES="$REPO/patch"
 
+HOSTNAME_COLOR="1;36m"
+FORMAT="jpg"
+WORKING_DIR='extract'
+THEMES=(alicia beatrice maria)
+
+mkdir "$WORKING_DIR"
+tar -xzf "$PATCHES/$1.tar.gz" -C "$WORKING_DIR"
+
+source "$WORKING_DIR/header"
 theme="$1"
-reg1="^[[:alnum:]]+$"
-reg2="\b$theme\b"
-if [[ ! $theme =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
-  echo "There's no such theme."
-  exit 1
-fi
-
-echo 'Checking out the theme...'
-cd "$REPO"
-current=$(git branch --show-current)
-if [[ $current = master ]]; then
-  echo "Please checkout from master first."
-  exit 1
-fi
-if [[ $current = $theme ]]; then
-  echo "You already have this theme!"
-  exit 1
-fi
-git checkout $theme
-echo 'Done!'; sleep 1
-
-echo 'Setting wallpaper...'
-sed -i "s/$current/$theme/" ~/.fehbg
-echo 'Done!'; sleep 1
-
-echo 'After compilation is finished please restart the session.'
-sudo make clean install
+# 
+# reg1="^[[:alnum:]]+$" # Check if theme is available.
+# reg2="\b$theme\b"
+# if [[ ! $theme =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
+#   echo "There's no such theme."
+#   exit 1
+# fi
+# 
+rep="\\\[\\033\[$HOSTNAME_COLOR\]"
+echo "Changing the hostname color..."
+# Assuming white is not a color.
+sed -n '/PS1/s/\\\[\\033\[[01];3[0-68-9]m\\\]/'"$rep"'/g p' bashrc
+echo "Done!"; sleep 1s
+# 
+# echo "Changing the background..."
+# sed -n '/feh/s/preview\/.*.jpg/preview\/alicia.jpg/g p' fehbg
+# echo "Done!"; sleep 1s
+# 
+# echo "Changing dwm's colorscheme..."
+# cp "$WORKING_DIR/palette.h" "$INCLUDE"
+# echo "Done!"; sleep 1s
+# 
+echo "Cleaning up..."
+rm -r extract
+echo "Done!"; sleep 1s
+# 
+# echo "Please restart the X session for the changes to be finalized."
+# # sudo make clean install
