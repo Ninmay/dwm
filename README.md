@@ -9,15 +9,15 @@ In order to build dwm you need the Xlib header files.
 Packages: *xorg-server*, *xorg-xinit*.
 Iosevka fonts will come in handy. Otherwise change it to your own taste.
 
-Base changes
-------------
-Patches are located in the *patches* directory. Other than that, I haven't
-touched config files any deeper than setting up base values. 
-This dwm build also has script functionality.
+Changes and my experience
+-------------------------
+First basic install, fzf scripts, local bin folder, polishing up the visual
+aspect, multiple themes feature. Plan to do: persistent pertags, running
+terminal apps more quickly, funny widgets.
 
 Configuration
 -------------
-It's recommended that you have all installs in $HOME/Build folder.
+It's recommended that you have all installs in *$HOME/Build* folder.
 First install st and dmenu from the suckless website. Set your desired font
 for st. My config: *iosevka-term.ttc:style=Extended:size=15*, *borderpx = 25*.
 Once you're done, clone this repository and compile it the same way you would
@@ -50,13 +50,13 @@ For example sleep, shutdown, xbacklight (for changing brightness).
 # %wheel ALL=(ALL) NOPASSWD: ALL
 nintendo ALL=(ALL) NOPASSWD: /bin/runit-init, /usr/bin/xbacklight, /usr/bin/zzz
 ```  
-To enable scripts (or include any other config):
+To enable scripts (or include any other configs):
 ```bash
 ln -s {repo path here}/scripts/bashrc ~/.bashrc
 ```
 Just remember to back up and remove your own .bashrc. If there are any programs
 bash couldn't found, that means you haven't installed them yet. If so, install them.
-PS The wallpaper is in the *preview* folder. (I set it with feh.)
+PS The wallpaper is located in *$REPO/patches/preview* and is named theme.jpg.
 Makefile deletes *config.h*, so changes shall go to *config.def.h*.
 
 Themes 
