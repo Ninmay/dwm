@@ -14,7 +14,8 @@
 [[ $- != *i* ]] && return
 
 PS1='\[\033[1;36m\][\u@\h \[\033[1;37m\]\W\[\033[1;36m\]]\$ \[\033[0;37m\]'
-export PATH=~/Build/dwm/bin:$PATH # Add scripts to path.
+# Please set this parameter so that it fits your repo.
+export PATH=$HOME/Build/dwm/bin:$PATH # Add scripts to path.
 
 # Modes. Planning to add stuff like: reading, watching. 
 alias music='mpv ~/Music/* --shuffle'

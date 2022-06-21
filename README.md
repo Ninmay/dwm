@@ -17,10 +17,11 @@ This dwm build also has script functionality.
 
 Configuration
 -------------
+It's recommended that you have all installs in $HOME/Build folder.
 First install st and dmenu from the suckless website. Set your desired font
 for st. My config: *iosevka-term.ttc:style=Extended:size=15*, *borderpx = 25*.
 Once you're done, clone this repository and compile it the same way you would
-compile st and dmenu.  
+compile st and dmenu.
 Copy the default xinitrc to your home directory as .xinitrc. It *should*
 be in the /etc/X11/xinit/xinitrc. Remove the lines with xterm, xclock and
 twm. Then add programs at the end that you would like to run on start up.
