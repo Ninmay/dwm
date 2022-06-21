@@ -12,7 +12,7 @@
 REPO="$HOME/Build/dwm"
 BASHRC="$REPO/bin/bashrc"
 FEHBG="$REPO/bin/fehbg"
-INCLUDE="2"
+INCLUDE="$REPO/include"
 PATCHES="$REPO/patch"
 
 HOSTNAME_COLOR="1;36m"
@@ -20,33 +20,33 @@ FORMAT="jpg"
 WORKING_DIR='extract'
 THEMES=(alicia beatrice maria)
 
-mkdir "$WORKING_DIR"
-tar -xzf "$PATCHES/$1.tar.gz" -C "$WORKING_DIR"
-
-source "$WORKING_DIR/header"
 theme="$1"
-# 
-# reg1="^[[:alnum:]]+$" # Check if theme is available.
-# reg2="\b$theme\b"
-# if [[ ! $theme =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
-#   echo "There's no such theme."
-#   exit 1
-# fi
-# 
+reg1="^[[:alnum:]]+$" # Check if theme is available.
+reg2="\b$theme\b"
+if [[ ! $theme =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
+  echo "There's no such theme."
+  exit 1
+fi
+
+cd "$REPO"
+mkdir "$WORKING_DIR"
+tar -xzf "$PATCHES/$theme.tar.gz" -C "$WORKING_DIR"
+
+source "$WORKING_DIR/header" # Load variables.
+
+echo "Changing the hostname color..." # Assuming white is not a color.
 rep="\\\[\\033\[$HOSTNAME_COLOR\]"
-echo "Changing the hostname color..."
-# Assuming white is not a color.
-sed -n '/PS1/s/\\\[\\033\[[01];3[0-68-9]m\\\]/'"$rep"'/g p' bashrc
+sed -n '/PS1/s/\\\[\\033\[[01];3[0-68-9]m\\\]/'"$rep"'/g p' "$BASHRC"
 echo "Done!"; sleep 1s
-# 
-# echo "Changing the background..."
-# sed -n '/feh/s/preview\/.*.jpg/preview\/alicia.jpg/g p' fehbg
-# echo "Done!"; sleep 1s
-# 
-# echo "Changing dwm's colorscheme..."
-# cp "$WORKING_DIR/palette.h" "$INCLUDE"
-# echo "Done!"; sleep 1s
-# 
+
+echo "Changing the background..."
+sed -n '/feh/s/preview\/.*\.jpg/preview\/'"$theme\.$FORMAT"'/g p' "$FEHBG"
+echo "Done!"; sleep 1s
+
+echo "Changing dwm's colorscheme..."
+echo "$WORKING_DIR/palette.h" "$INCLUDE"
+echo "Done!"; sleep 1s
+
 echo "Cleaning up..."
 rm -r extract
 echo "Done!"; sleep 1s
