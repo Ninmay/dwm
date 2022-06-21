@@ -50,11 +50,11 @@ For example sleep, shutdown, xbacklight (for changing brightness).
 # %wheel ALL=(ALL) NOPASSWD: ALL
 nintendo ALL=(ALL) NOPASSWD: /bin/runit-init, /usr/bin/xbacklight, /usr/bin/zzz
 ```  
-To enable scripts (or include any other configs):
+To enable configs for scripts: (do that to any other config)
 ```bash
-ln -s {repo path here}/scripts/bashrc ~/.bashrc
+ln -s {repo path here}/bin/<config> ~/.<config>
 ```
-Just remember to back up and remove your own .bashrc. If there are any programs
+Just remember to back up and remove your own configs. If there are any programs
 bash couldn't found, that means you haven't installed them yet. If so, install them.
 PS The wallpaper is located in *$REPO/patches/preview* and is named theme.jpg.
 Makefile deletes *config.h*, so changes shall go to *config.def.h*.

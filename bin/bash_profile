@@ -1,0 +1,7 @@
+#
+# ~/.bash_profile
+#
+
+# Add scripts to path.
+export PATH=$HOME/Build/dwm/bin:$HOME/Build/st/bin:$PATH
+[[ -f ~/.bashrc ]] && . ~/.bashrc
