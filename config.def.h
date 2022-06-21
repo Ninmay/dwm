@@ -53,7 +53,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_background, "-nf", col_gray3, "-sb", col_maria_hat, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_background, "-nf", col_letter1, "-sb", col_foreground, "-sf", col_letter2, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /* sound and brightness */
