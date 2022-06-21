@@ -1,0 +1,54 @@
+#!/bin/bash
+
+## @file
+# Changes the dwm theme.
+#
+# $1 - name of the theme.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+
+REPO="$HOME/Build/dwm"
+BG_NAME="theme"
+BACKGROUND="$REPO/patch/preview/$BG_NAME"
+BASHRC="$REPO/bin/bashrc"
+COLORSCHEMES="$REPO/patch/colorschemes"
+
+HOSTNAME_COLOR="1;36m"
+FORMAT="jpg"
+WORKING_DIR='extract'
+THEMES=(alicia beatrice maria)
+
+theme="$1"
+reg1="^[[:alnum:]]+$" # Check if theme is available.
+reg2="\b$theme\b"
+if [[ ! $theme =~ $reg1 || ! ${THEMES[@]} =~ $reg2 ]]; then
+  echo "There's no such theme."
+  exit 1
+fi
+
+cd "$REPO"
+mkdir "$WORKING_DIR"
+tar -xzf "$COLORSCHEMES/$theme.tar.gz" -C "$WORKING_DIR"
+
+source "$WORKING_DIR/header" # Load variables.
+
+echo "Changing the hostname color..." # Assuming white is not a color.
+rep="\\\\[\\\033\[$HOSTNAME_COLOR\\\\]" # double delimeter for '\'...
+sed -i '/PS1/s/\\\[\\033\[[01];3[0-68-9]m\\\]/'"$rep"'/g' "$BASHRC"
+echo "Done!"; sleep 1s
+
+echo "Changing the background..."
+cp "$WORKING_DIR/$BG_NAME.$FORMAT" "$BACKGROUND.$FORMAT"
+echo "Done!"; sleep 1s
+
+echo "Changing dwm's colorscheme..."
+cp "$WORKING_DIR/palette.h" "$REPO"
+echo "Done!"; sleep 1s
+
+echo "Cleaning up..."
+rm -r extract
+echo "Done!"; sleep 1s
+ 
+echo "Please restart the X session for the changes to be finalized."
+sudo make install clean
