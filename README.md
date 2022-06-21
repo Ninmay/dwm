@@ -58,11 +58,14 @@ bash couldn't found, that means you haven't installed them yet. If so, install t
 PS The wallpaper is in the *preview* folder. (I set it with feh.)
 Makefile deletes *config.h*, so changes shall go to *config.def.h*.
 
-Themes
+Themes 
 ------
-![general](patch/preview/alicia-general.jpg)
+*Beatrice*
 ![write](patch/preview/beatrice-write.jpg)
 ![compile](patch/preview/beatrice-compile.jpg)
+*Maria*
 ![compile](patch/preview/maria-compile.jpg)
-![browse](patch/preview/alicia-browse.jpg)
 ![fun](patch/preview/maria-fun.jpg)
+*Alicia*
+![general](patch/preview/alicia-general.jpg)
+![browse](patch/preview/alicia-browse.jpg)
