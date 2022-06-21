@@ -17,7 +17,7 @@ options:
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.h config.mk include/palette.h
+${OBJ}: config.h config.mk palette.h
 
 config.h:
 	cp config.def.h $@

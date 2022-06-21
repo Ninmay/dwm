@@ -8,7 +8,6 @@
 #
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
-#
 
 FILENAME="$1"
 case "$FILENAME" in

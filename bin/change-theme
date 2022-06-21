@@ -7,13 +7,11 @@
 #
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
-#
 
 REPO="$HOME/Build/dwm"
 BG_NAME="theme"
 BACKGROUND="$REPO/patch/preview/$BG_NAME"
 BASHRC="$REPO/bin/bashrc"
-INCLUDE="$REPO/include"
 COLORSCHEMES="$REPO/patch/colorschemes"
 
 HOSTNAME_COLOR="1;36m"
@@ -37,7 +35,7 @@ source "$WORKING_DIR/header" # Load variables.
 
 echo "Changing the hostname color..." # Assuming white is not a color.
 rep="\\\\[\\\033\[$HOSTNAME_COLOR\\\\]" # double delimeter for '\'...
-sed -i '/PS1/s/\\\[\\033\[[01];3[0-68-9]m\\\]/'"$rep"'/g p' "$BASHRC"
+sed -i '/PS1/s/\\\[\\033\[[01];3[0-68-9]m\\\]/'"$rep"'/g' "$BASHRC"
 echo "Done!"; sleep 1s
 
 echo "Changing the background..."
@@ -45,7 +43,7 @@ cp "$WORKING_DIR/$BG_NAME.$FORMAT" "$BACKGROUND.$FORMAT"
 echo "Done!"; sleep 1s
 
 echo "Changing dwm's colorscheme..."
-cp "$WORKING_DIR/palette.h" "$INCLUDE"
+cp "$WORKING_DIR/palette.h" "$REPO"
 echo "Done!"; sleep 1s
 
 echo "Cleaning up..."
@@ -53,4 +51,4 @@ rm -r extract
 echo "Done!"; sleep 1s
  
 echo "Please restart the X session for the changes to be finalized."
-sudo make clean install
+sudo make install clean

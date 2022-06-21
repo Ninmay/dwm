@@ -2,7 +2,7 @@
 
 /* libraries */
 #include <X11/XF86keysym.h>
-#include "include/palette.h"
+#include "palette.h"
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
