@@ -12,8 +12,8 @@ Iosevka fonts will come in handy. Otherwise change it to your own taste.
 Changes and my experience
 -------------------------
 First basic install, fzf scripts, local bin folder, polishing up the visual
-aspect, multiple themes feature. Plan to do: persistent pertags, running
-terminal apps more quickly, better hotkeys, full dwm documentation.
+aspect, multiple themes feature. Plan to do: persistent pertags, better
+understanding of st, better hotkeys without sxhkd, full dwm documentation.
 
 Configuration
 -------------
