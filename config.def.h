@@ -6,7 +6,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const int startwithgaps[]    = {1, 1, 0, 0, 1};	/* 1 means gaps are used by default, this can be customized for each tag */
+static const int startwithgaps[]    = {1, 0, 0, 1, 0};	/* 1 means gaps are used by default, this can be customized for each tag */
 static const unsigned int gappx[]   = {55, 55, 55, 55, 55};   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -15,7 +15,7 @@ static const char *fonts[]          = { "iosevka-medium.ttc:style=Extended:size=
 static const char dmenufont[]       = "iosevka-medium.ttc:style=Extended:size=12";
 
 /* tagging */
-static const char *tags[] = { "総", "筆", "編", "網", "遊"};
+static const char *tags[] = { "筆", "網", "編", "遊", "総"};
 
 static const Rule rules[] = {
 	/* xprop(1):
