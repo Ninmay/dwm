@@ -14,7 +14,7 @@ BG_NAME="theme"
 BACKGROUND="$REPO/patch/preview/$BG_NAME"
 BASHRC="$REPO/bin/bashrc"
 INCLUDE="$REPO/include"
-PATCHES="$REPO/patch"
+COLORSCHEMES="$REPO/patch/colorschemes"
 
 HOSTNAME_COLOR="1;36m"
 FORMAT="jpg"
@@ -31,7 +31,7 @@ fi
 
 cd "$REPO"
 mkdir "$WORKING_DIR"
-tar -xzf "$PATCHES/$theme.tar.gz" -C "$WORKING_DIR"
+tar -xzf "$COLORSCHEMES/$theme.tar.gz" -C "$WORKING_DIR"
 
 source "$WORKING_DIR/header" # Load variables.
 
