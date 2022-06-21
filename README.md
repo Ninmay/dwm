@@ -13,7 +13,7 @@ Changes and my experience
 -------------------------
 First basic install, fzf scripts, local bin folder, polishing up the visual
 aspect, multiple themes feature. Plan to do: persistent pertags, running
-terminal apps more quickly, funny widgets.
+terminal apps more quickly, better hotkeys.
 
 Configuration
 -------------
