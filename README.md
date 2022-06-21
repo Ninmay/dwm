@@ -60,12 +60,15 @@ Makefile deletes *config.h*, so changes shall go to *config.def.h*.
 
 Themes 
 ------
-*Beatrice*
+**Beatrice**
+
 ![write](patch/preview/beatrice-write.jpg)
 ![compile](patch/preview/beatrice-compile.jpg)
-*Maria*
+**Maria**
+
 ![compile](patch/preview/maria-compile.jpg)
 ![fun](patch/preview/maria-fun.jpg)
-*Alicia*
+**Alicia**
+
 ![general](patch/preview/alicia-general.jpg)
 ![browse](patch/preview/alicia-browse.jpg)
