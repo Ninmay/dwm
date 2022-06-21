@@ -19,8 +19,8 @@ Scripts
 -------
 If you want to know how to use them just read their respective source code.
 All of them are carefully documented in *respective scripts* and *bashrc*.
-(and other configs you can find in *scripts* folder) The scripts are added
-to $PATH, so you can run them from anywhere you want.
+(and other configs you can find in *bin* folder) The scripts are added to
+$PATH, so you can run them from anywhere you want.
 
 
 Configuration
@@ -38,7 +38,7 @@ My example:
 ~/.fehbg
 
 # dwm
-~/Build/dwm/scripts/laptop-dwmbar &
+~/Build/dwm/bin/laptop-dwmbar &
 sxhkd &
 pavucontrol & # My laptop won't play sound without this.
 sleep 0.5
