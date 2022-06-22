@@ -13,7 +13,6 @@
 #
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
-#
 
 # Pictures path should be dependent on the directory your screenshot
 # app sends the screenshots to, which is why it's not set as macro.

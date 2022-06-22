@@ -36,19 +36,19 @@ source "$WORKING_DIR/header" # Load variables.
 echo "Changing the hostname color..." # Assuming white is not a color.
 rep="\\\\[\\\033\[$HOSTNAME_COLOR\\\\]" # double delimeter for '\'...
 sed -i '/PS1/s/\\\[\\033\[[01];3[0-68-9]m\\\]/'"$rep"'/g' "$BASHRC"
-echo "Done!"; sleep 1s
+echo "Done!"; sleep 0.2
 
 echo "Changing the background..."
 cp "$WORKING_DIR/$BG_NAME.$FORMAT" "$BACKGROUND.$FORMAT"
-echo "Done!"; sleep 1s
+echo "Done!"; sleep 0.2
 
 echo "Changing dwm's colorscheme..."
 cp "$WORKING_DIR/palette.h" "$REPO"
-echo "Done!"; sleep 1s
+echo "Done!"; sleep 0.2
 
 echo "Cleaning up..."
 rm -r extract
-echo "Done!"; sleep 1s
+echo "Done!"; sleep 0.2
  
 echo "Please restart the X session for the changes to be finalized."
 sudo make install clean

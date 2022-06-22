@@ -5,6 +5,7 @@
 # audio input and selected apps into the virtual microphone. To make it
 # work, please specify appropriate sinks. To find out what are the names,
 # run "pactl list sources" or "pactl list sinks".
+# @date 2022
 
 INPUT_SINK="alsa_input.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-mono"
 OUTPUT_SINK="alsa_output.usb-Burr-Brown_from_TI_USB_Audio_CODEC-00.analog-stereo-output"
