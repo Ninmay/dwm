@@ -1,4 +1,8 @@
 #!/bin/sh
 
+## @file
+# Initial command for setting the background.
+# @date 2021
+
 # That is, if repo is in the Build folder, otherwise please change it.
 feh --no-fehbg --bg-fill "$HOME/Build/dwm/patch/preview/theme.jpg"

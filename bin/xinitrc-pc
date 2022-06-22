@@ -34,12 +34,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# wallpaper
 ~/.fehbg
 
 # dwm
-$HOME/Build/dwm/bin/laptop-dwmbar &
+$HOME/Build/dwm/bin/pc-dwmbar &
 sxhkd &
-pavucontrol & # My laptop won't play sound without this.
+pavucontrol & # My PC won't play sound without this.
 sleep 0.5
 killall pavucontrol
 
