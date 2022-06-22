@@ -3,9 +3,9 @@
 #
 
 # Add scripts to path. Remove st path if not needed.
-export PATH=$HOME/Build/dwm/bin:$PATH
 ST_REPO=$HOME/Build/st/bin
 [[ -d $ST_REPO ]] && export PATH=$ST_REPO:$PATH
+export PATH=$HOME/Build/dwm/bin:$PATH
 
 # Autorun startx from the first terminal.
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
