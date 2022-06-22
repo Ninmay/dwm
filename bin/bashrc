@@ -24,11 +24,17 @@ alias fcd='cd $(find ~ -not -path "*/.*" -type d -print | fzf)' # Fuzzy cd.
 alias fhcd='cd $(find ~ -type d -print | fzf)' # Fuzzy cd over hidden files.
 alias frun='source frun' # source, because we want cd to be pernament.
 
+# st commands. (Disable this if not needed.)
+alias cc='source cc'
+alias cm='source cm'
+alias cx='source cx'
+alias cb='cd ..'
+
 # Special parameters for applications.
 alias ls='ls --color=auto --group-directories-first'
 alias tree='watch -n 5 tree . -L 1'
 alias ranger='. ranger'
-alias youtube-dl='youtube-dl --no-playlist --audio-format mp3 --audio-quality 320K'
+alias ytmp3='youtube-dl -x --no-playlist --audio-format mp3 --audio-quality 320K'
 
 # shortcuts
 alias m='udisksctl mount -b'
