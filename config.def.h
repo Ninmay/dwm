@@ -6,7 +6,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const int startwithgaps[]    = {0, 0, 0, 1, 0};	/* 1 means gaps are used by default, this can be customized for each tag */
+static const int startwithgaps[]    = {0, 0, 0, 1, 1};	/* 1 means gaps are used by default, this can be customized for each tag */
 static const unsigned int gappx[]   = {55, 55, 55, 55, 55};   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */

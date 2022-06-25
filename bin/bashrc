@@ -12,7 +12,7 @@ ST_ALIAS="$HOME/Build/st/bin/st_alias"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-PS1='\[\033[1;36m\][\u@\h \[\033[1;37m\]\W\[\033[1;36m\]]\$ \[\033[0;37m\]'
+PS1='\[\033[1;31m\][\u@\h \[\033[1;37m\]\W\[\033[1;31m\]]\$ \[\033[0;37m\]'
 
 # Fuzzy.
 alias fcd='cd $(find ~ -not -path "*/.*" -type d -print | fzf)' # Fuzzy cd.
