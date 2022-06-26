@@ -11,9 +11,15 @@
 # st app launch 
 #
 
-# ranger
 shift + alt + f
   st -e ranger
+
+#
+# dwm app launch 
+#
+
+alt + {i, o}
+  {brave, thunderbird}
 
 #
 # screenshotting
