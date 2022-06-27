@@ -6,17 +6,17 @@
 
 /* appearance */
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const int startwithgaps[]    = {0, 0, 0, 1, 1};	/* 1 means gaps are used by default, this can be customized for each tag */
-static const int startwithbar[]     = {0, 1, 1, 1, 1};	/* 1 means gaps are used by default, this can be customized for each tag */
-static const unsigned int gappx[]   = {55, 55, 55, 55, 55};   /* default gap between windows in pixels, this can be customized for each tag */
+static const int startwithgaps[]    = {1, 0, 0, 1};	/* 1 means gaps are used by default, this can be customized for each tag */
+static const int startwithbar[]     = {1, 0, 0, 1};	/* 1 means gaps are used by default, this can be customized for each tag */
+static const unsigned int gappx[]   = {55};   /* default gap between windows in pixels, this can be customized for each tag */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 0;        /* 0 means no bar */
+static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "iosevka-medium.ttc:style=Extended:size=12" };
 static const char dmenufont[]       = "iosevka-medium.ttc:style=Extended:size=12";
 
 /* tagging */
-static const char *tags[] = { "筆", "網", "編", "遊", "総"};
+static const char *tags[] = { "総", "筆", "網", "遊" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -36,16 +36,15 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* third entry is default */
+	{ "[]=",      tile },    /* second entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 static const Layout *startwithlayout[] = {
-  &layouts[2],
-  &layouts[2],
-  &layouts[0],
-  &layouts[0],
   &layouts[1],
+  &layouts[2],
+  &layouts[2],
+  &layouts[0],
 };	/* 1 means gaps are used by default, this can be customized for each tag */
 
 /* key definitions */
