@@ -1,0 +1,12 @@
+#!/bin/bash
+
+## @file
+# Changes the directory selected with fzf. Works with hidden directories.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+
+DIR="$(find ~ -type d -print | fzf)"
+
+[[ $DIR ]] && cd "$DIR"
+

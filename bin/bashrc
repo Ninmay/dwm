@@ -10,20 +10,18 @@
 ST_ALIAS="$HOME/Build/st/bin/st_alias"
 [[ -f $ST_ALIAS ]] && source "$ST_ALIAS" # Only when the file exists.
 
-# If not running interactively, don't do anything
+# If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 PS1='\[\033[1;31m\][\u@\h \[\033[1;37m\]\W\[\033[1;31m\]]\$ \[\033[0;37m\]'
 
-# Fuzzy.
-alias fcd='cd $(find ~ -not -path "*/.*" -type d -print | fzf)' # Fuzzy cd.
-alias fhcd='cd $(find ~ -type d -print | fzf)' # Fuzzy cd over hidden files.
-alias frun='source frun' # source, because we want cd to be pernament.
+# source
+alias fcd='source fcd'
+alias fhcd='source fhcd'
+alias frun='source frun'
 
 # Special parameters for applications.
 alias ls='ls --color=auto --group-directories-first'
-alias music='mpv ~/Music/* --shuffle'
 alias ranger='. ranger'
-alias tree='watch -n 5 tree . -L 1'
 alias ytmp3='youtube-dl -x --no-playlist --audio-format mp3 --audio-quality 320K'
 
 # shortcuts

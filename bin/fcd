@@ -1,0 +1,11 @@
+#!/bin/bash
+
+## @file
+# Changes the directory selected with fzf.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+
+DIR="$(find ~ -not -path "*/.*" -type d -print | fzf)"
+
+[[ $DIR ]] && cd "$DIR"
