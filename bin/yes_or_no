@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## @file
+# Prompts yes or no. Exits succesfully on yes.
+# $1 - prompt message.
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+
+while :
+do
+  read -p "$1 [y/n]: " yn
+  case $yn in
+    [Yy]*) exit 0 ;;  
+    [Nn]*) echo "Aborted"; exit 1 ;;
+  esac
+done

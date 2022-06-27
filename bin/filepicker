@@ -3,9 +3,7 @@
 ## @file
 # Works kind of like rifle. Checks for the file extension and chooses
 # a designated app to execute it with.
-#
 # $1 - filename of a file to be opened.
-#
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
 

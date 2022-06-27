@@ -4,12 +4,9 @@
 # Runs the file selected with fzf. The file is ran by an app chosen
 # based on the file extension. It's different than frun, because it
 # starts the search from the working directory and is of depth 0.
-#
 # If there's a program you would explicitly like to use, pass it
 # as argument. For example: fwalk vim.
-#
 # $1 - specific program to be used for executing the file 
-#
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
 

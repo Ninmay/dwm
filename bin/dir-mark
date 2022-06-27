@@ -2,6 +2,8 @@
 
 ## @file
 # Mark the directory for cx script.
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
 
 BIN="$HOME/Build/dwm/bin"
 SCRIPTNAME='goto-mark'

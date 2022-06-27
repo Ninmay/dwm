@@ -2,15 +2,12 @@
 
 ## @file
 # Moves the oldest screenshot to a designated folder.
-#
 # It is assumed that there's no such image named '*'. Otherwise this
 # script will throw "empty directory" error. It is also assumed that
 # the earliest image is lexicographically first. Please make sure the 
 # directories exist beforehand. Please also remember to set the parameter
 # $1 without trailing /.
-#
 # $1 - path to directory where screenshots are sent.
-#
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
 

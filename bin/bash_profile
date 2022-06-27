@@ -1,6 +1,8 @@
-#
-# ~/.bash_profile
-#
+## @file
+# This file is responsible for loading scripts and autostarting dwm
+# from the first terminal. If you want to use the console switch to tty2.
+# @author Anh Dinh Trong <ad438410@students.mimuw.edu.pl>
+# @date 2022
 
 # Add scripts to path.
 export PATH=$HOME/Build/dwm/bin:$PATH
@@ -11,4 +13,3 @@ if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-

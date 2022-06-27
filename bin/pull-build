@@ -2,6 +2,8 @@
 
 ## @file
 # Pulls from all repositories in the specified folder.
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
 
 BUILD="$HOME/Build"
 
@@ -10,6 +12,10 @@ for dir in $BUILD/*; do
     cd "$dir"
     base=$(git rev-parse --show-toplevel | sed 's|.*/||')
     echo "Pulling $base..."
-    git pull
+    git pull 
+    if [[ $? -ne 0 ]]; then
+      yes_or_no "Do you want to try restoring the repository?" && \
+      git restore . && git pull
+    fi
   fi
 done

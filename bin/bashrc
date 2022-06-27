@@ -1,8 +1,5 @@
 ## @file
-# Main rc file. This bashrc is also responsible for autostarting dwm
-# from the first terminal. If you want to use the console switch to tty2.
-# In case you don't need this functionality just comment out the code.
-#
+# Main rc file.
 # @author Anh Dinh Trong <ad438410@students.mimuw.edu.pl>
 # @date 2021
 
