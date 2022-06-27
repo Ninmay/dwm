@@ -2,9 +2,7 @@
 # ~/.bash_profile
 #
 
-# Add scripts to path. Remove st path if not needed.
-ST_REPO=$HOME/Build/st/bin
-[[ -d $ST_REPO ]] && export PATH=$ST_REPO:$PATH
+# Add scripts to path.
 export PATH=$HOME/Build/dwm/bin:$PATH
 
 # Autorun startx from the first terminal.

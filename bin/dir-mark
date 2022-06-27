@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## @file
+# Mark the directory for cx script.
+
+BIN="$HOME/Build/dwm/bin"
+SCRIPTNAME='goto-mark'
+
+sed -i "s|=.*$|=$(pwd)|g" "$BIN/$SCRIPTNAME"

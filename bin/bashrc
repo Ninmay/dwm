@@ -6,18 +6,17 @@
 # @author Anh Dinh Trong <ad438410@students.mimuw.edu.pl>
 # @date 2021
 
-# St scripts.
-ST_ALIAS="$HOME/Build/st/bin/st_alias"
-[[ -f $ST_ALIAS ]] && source "$ST_ALIAS" # Only when the file exists.
-
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
 PS1='\[\033[1;31m\][\u@\h \[\033[1;37m\]\W\[\033[1;31m\]]\$ \[\033[0;37m\]'
 
-# source
+# directories
 alias fcd='source fcd'
 alias fhcd='source fhcd'
 alias frun='source frun'
+alias ch='cd' # to home
+alias cb='cd ..' # back one-step
+alias goto-mark='source goto-mark'
 
 # Special parameters for applications.
 alias ls='ls --color=auto --group-directories-first'
@@ -29,5 +28,4 @@ alias m='udisksctl mount -b'
 alias um='udisksctl unmount -b'
 
 # vim 
-alias mkjmain='cp ~/.vim/completion/Main.java .'
 alias cleantags='rm tags *.taghl'

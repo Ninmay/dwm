@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## @file
+# Change the working directory to the marked environment.
+
+MARK=/home/nintendo/Media/Code/Java/repository
+cd "$MARK"

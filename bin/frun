@@ -12,7 +12,8 @@
 # @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
 # @date 2022
 
-FILENAME="$(find ~ -not -path "*/.*" | fzf)" # omit hidden directories
+# omit hidden directories
+FILENAME="$(find ~ -not -path "*/.*" -type f,l -print | fzf)"
 cd "$(dirname "$FILENAME")"
 
 if [[ -z $1 ]]; then
