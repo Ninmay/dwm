@@ -26,4 +26,6 @@ case "$FILENAME" in
   *pdf)
     zathura --fork "$FILENAME"
     ;; # Feel free to add your functionality.
+  *)
+    vim "$FILENAME"
 esac

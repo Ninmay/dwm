@@ -1,0 +1,12 @@
+#!/bin/bash
+
+## @file
+# Takes a screenshot on selected area.
+#
+# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @date 2022
+
+PICTURES="$HOME/Pictures"
+FORMAT="png"
+maim -su "$PICTURES/$(date '+%Y %m %d %T').$FORMAT" && \
+screenshot-maid "$PICTURES" 

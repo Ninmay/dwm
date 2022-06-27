@@ -12,8 +12,8 @@ Iosevka fonts will come in handy. Otherwise change it to your own taste.
 Changes and my experience
 -------------------------
 First basic install, fzf scripts, local bin folder, polishing up the visual
-aspect, multiple themes feature. Plan to do: persistent pertags, better
-understanding of st, better hotkeys without sxhkd, full dwm documentation.
+aspect, multiple themes feature, persistent pertags, better hotkeys without
+sxhkd. To do: full dwm documentation.
 
 Configuration
 -------------
@@ -32,7 +32,6 @@ My example:
 
 # dwm
 ~/Build/dwm/bin/laptop-dwmbar &
-sxhkd &
 pavucontrol & # My laptop won't play sound without this.
 sleep 0.5
 killall pavucontrol
@@ -52,7 +51,7 @@ nintendo ALL=(ALL) NOPASSWD: /bin/runit-init, /usr/bin/xbacklight, /usr/bin/zzz
 ```  
 To enable configs for scripts: (do that to any other config)
 ```bash
-ln -s {repo path here}/bin/<config> ~/.<config>
+ln -s {repo path here}/bin/<config> <config_path> 
 ```
 Just remember to back up and remove your own configs. If there are any programs
 bash couldn't found, that means you haven't installed them yet. If so, install them.
