@@ -11,9 +11,9 @@ Iosevka fonts will come in handy. Otherwise change it to your own taste.
 
 Changes and my experience
 -------------------------
-First basic install, fzf scripts, local bin folder, polishing up the visual
-aspect, multiple themes feature, persistent pertags, better hotkeys without
-sxhkd. To do: full dwm documentation.
+First basic install, patching up, fzf scripts, local bin folder, polishing
+up the visual aspect, multiple themes feature, persistent pertags, better
+hotkeys without sxhkd. To do: full dwm documentation in Polish.
 
 Configuration
 -------------
