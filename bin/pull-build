@@ -1,0 +1,15 @@
+#!/bin/bash
+
+## @file
+# Pulls from all repositories in the specified folder.
+
+BUILD="$HOME/Build"
+
+for dir in $BUILD/*; do
+  if [[ -d $dir/.git ]]; then # is a repository
+    cd "$dir"
+    base=$(git rev-parse --show-toplevel | sed 's|.*/||')
+    echo "Pulling $base..."
+    git pull
+  fi
+done
