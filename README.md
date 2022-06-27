@@ -62,7 +62,6 @@ Themes
 ------
 **Beatrice**
 
-![write](patch/preview/beatrice-write.jpg)
 ![compile](patch/preview/beatrice-compile.jpg)
 **Maria**
 
