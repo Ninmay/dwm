@@ -2,7 +2,7 @@
 
 ## @file
 # Change the working directory to the marked environment.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 MARK=/home/nintendo/Media/Code/Java/repository

@@ -2,7 +2,7 @@
 
 ## @file
 # This is a shortcut for running Umineko from Steam.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 steam steam://rungameid/406550 # Taken from Umineko's .desktop file.

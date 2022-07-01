@@ -4,7 +4,7 @@
 # Works kind of like rifle. Checks for the file extension and chooses
 # a designated app to execute it with.
 # $1 - filename of a file to be opened.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 FILENAME="$1"
@@ -12,21 +12,25 @@ FILENAME="$1"
 [[ -z $FILENAME ]] && exit 1
 
 case "$FILENAME" in
-  *mp3 | *flac | *wav)
+  *.mp3 | *.flac | *.wav)
     mpv "$FILENAME"
     ;;
-  *mkv | *mp4 | *ts)
+  *.mkv | *.mp4 | *.ts)
     mpv "$FILENAME" &
     ;;
-  *png | *jpg | *jpeg | *pnm)
+  *.png | *.jpg | *.jpeg | *.pnm)
     sxiv "$FILENAME" &
     ;;
-  *tex | *c | *h | *java)
+  *.tex | *.c | *.h | *.java)
     vim "$FILENAME"
     ;;
-  *pdf)
+  *.tar)
+    play-tar "$FILENAME"
+    ;;
+  *.pdf)
     zathura --fork "$FILENAME"
     ;; # Feel free to add your functionality.
   *)
     vim "$FILENAME"
+    ;;
 esac

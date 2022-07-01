@@ -1,11 +1,11 @@
 ## @file
 # Main rc file.
-# @author Anh Dinh Trong <ad438410@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2021
 
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
-PS1='\[\033[1;31m\][\u@\h \[\033[1;37m\]\W\[\033[1;31m\]]\$ \[\033[0;37m\]'
+PS1='\[\033[1;32m\][\u@\h \[\033[1;37m\]\W\[\033[1;32m\]]\$ \[\033[0;37m\]'
 
 # directories
 alias fcd='source fcd'

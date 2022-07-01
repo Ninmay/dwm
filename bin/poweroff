@@ -4,7 +4,7 @@
 # A convenient "alias" for powering off your device. 
 # It's written as a script instead of alias, so that it's possible to
 # call it from dmenu conveniently.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 # This is how you poweroff in Artix Linux.

@@ -2,7 +2,7 @@
 
 ## @file
 # Pulls from all repositories in the specified folder.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 BUILD="$HOME/Build"
@@ -13,7 +13,7 @@ for dir in $BUILD/*; do
     base=$(git rev-parse --show-toplevel | sed 's|.*/||')
     echo "Pulling $base..."
     git pull 
-    if [[ $? -ne 0 ]]; then
+    if [[ $? -ne 0 ]]; then # probably changes were made
       yes_or_no "Do you want to try restoring the repository?" && \
       git restore . && git pull
     fi

@@ -2,7 +2,7 @@
 
 ## @file
 # Changes the directory selected with fzf. Works with hidden directories.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 DIR="$(find ~ -type d -print | fzf)"

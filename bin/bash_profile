@@ -1,7 +1,7 @@
 ## @file
 # This file is responsible for loading scripts and autostarting dwm
 # from the first terminal. If you want to use the console switch to tty2.
-# @author Anh Dinh Trong <ad438410@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 # Add scripts to path.

@@ -2,7 +2,7 @@
 
 ## @file
 # Mark the directory for cx script.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 BIN="$HOME/Build/dwm/bin"

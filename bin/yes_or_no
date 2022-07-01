@@ -3,7 +3,7 @@
 ## @file
 # Prompts yes or no. Exits succesfully on yes.
 # $1 - prompt message.
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 while :

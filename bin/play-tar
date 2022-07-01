@@ -1,0 +1,31 @@
+#!/bin/bash
+
+## @file Unpacks tar and plays all of the visible files.
+# This script expects two structures, either a set of files or a set
+# of directories. Files will be played in lexicographical order.
+# $1 - tar file.
+# @author Anh Dinh Trong
+# @date 2022
+
+FILENAME=$1
+dirname=$(echo "$FILENAME" | sed 's|/*[^/]*$||')
+basename=$(echo "$FILENAME" | sed 's|.*/||')
+
+cd "$dirname"
+[[ -d Playing ]] && echo "Please get rid of 'Playing' directory." && \
+exit 1
+
+mkdir "Playing"
+tar -xf "$FILENAME" -C Playing
+cd Playing
+
+files=(*)
+if [[ -f $files ]]; then # we assume that rest are also files.
+  mpv *
+else
+  for dir in *; do
+    yes_or_no "$dir" && mpv "$dir"
+  done
+fi
+
+yes_or_no "Do you want to clean up?" && rm -r ../Playing

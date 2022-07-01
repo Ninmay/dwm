@@ -2,6 +2,7 @@
 
 ## @file
 # Used to run dwm from console.
+# @author Anh Dinh Trong
 # @date 2021
 
 userresources=$HOME/.Xresources

@@ -6,7 +6,7 @@
 # If there's a program you would explicitly like to use, pass it
 # as argument. For example: frun vim.
 # $1 - specific program to be used for executing the file 
-# @author Anh Dinh Trong <ad438310@students.mimuw.edu.pl>
+# @author Anh Dinh Trong
 # @date 2022
 
 # omit hidden directories
