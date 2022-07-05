@@ -5,4 +5,5 @@
 # @author Anh Dinh Trong
 # @date 2022
 
-steam steam://rungameid/406550 # Taken from Umineko's .desktop file.
+cd $HOME/Media/Contents/Japanese/.Playing/Umineko
+./Umineko1to4
