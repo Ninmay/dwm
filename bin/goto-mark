@@ -5,5 +5,5 @@
 # @author Anh Dinh Trong
 # @date 2022
 
-MARK=/home/nintendo/Media/Code/Java/repository
+MARK=/home/ninmay/Build/dmenu
 cd "$MARK"

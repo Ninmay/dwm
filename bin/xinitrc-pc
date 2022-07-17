@@ -42,7 +42,7 @@ fi
 $HOME/Build/dwm/bin/pc-dwmbar &
 sxhkd &
 pavucontrol & # My PC won't play sound without this.
-sleep 0.5
+sleep 1 
 killall pavucontrol
 
 # chinese cartoons
